@@ -1,58 +1,77 @@
-# create-svelte
+# Othent.io Svelte Components Library
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![OthentLogin component](https://raw.githubusercontent.com/Othent/react-components/main/assets/screenshots/othent-login.png)
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+The Othent Svelte Components Library is a collection of Svelte components designed
+to provide a seamless way for developers to integrate Othent into their Svelte
+applications.
 
-## Creating a project
+## Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
+To use the components in your Svelte project, you can install it using `npm`:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```sh
+npm i othent-svelte-components
 ```
 
-## Developing
+Using `yarn`:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```sh
+yarn add othent-svelte-components
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+Or using `pnpm`:
 
-## Building
-
-To build your library:
-
-```bash
-npm run package
+```sh
+pnpm add othent-svelte-components
 ```
 
-To create a production version of your showcase app:
+## Usage
 
-```bash
-npm run build
+To use the components, you can import them directly into your project:
+
+```ts
+import { OthentLogin } from 'othent-svelte-components';
 ```
 
-You can preview the production build with `npm run preview`.
+And then add them inside your Svelte application:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
+```ts
+<OthentLogin apiid={apiid} />
 ```
+
+### Props
+
+The component accepts the following props:
+
+- `apiid` (required): The API identifier used for authentication.
+- `location` (optional): The desired location of the modal. It accepts one of the following values: top, right, bottom, left, top-right, top-left, bottom-right, or bottom-left. If not provided, the default location is bottom.
+
+### Events
+
+The Othent Login Component emits the following events:
+
+- `login`: Dispatched when the user successfully logs in. The event detail contains the login response data.
+- `logout`: Dispatched when the user logs out. The event detail contains the logout response data.
+
+To handle these events, you can attach event listeners to the component:
+
+```ts
+<OthentLogin {apiid} on:login={handleLogin} on:logout={handleLogout} />
+```
+
+> 💡 Despite the library is modular and you can use each component as you wish,
+> the main component, `OthentLogin`, is probably all you need if don't need to
+> customize the behaviour of the login flow.
+
+## Documentation
+
+For more information on how to use the Othent Svelte Components Library, please
+see the official Othent documentation at
+[https://docs.othent.io/developers/component-library](https://docs.othent.io/developers/component-library).
+
+## Contact
+
+If you have any questions or issues with the Othent Library, please contact
+othent team at [hello@othent.io](mailto:hello@othent.io) or open an issue in
+the GitHub repository.

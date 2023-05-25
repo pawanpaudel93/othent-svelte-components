@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	import { OthentLogin } from '../lib';
+	import type { LogInReturnProps, LogOutReturnProps } from 'othent';
 	const API_ID = import.meta.env.VITE_OTHENT_API_ID;
 
-	const onLogin = (event) => {
+	const onLogin = (event: CustomEvent<LogInReturnProps>) => {
 		console.log(event.detail);
 	};
 
-	const onLogout = (event) => {
+	const onLogout = (event: CustomEvent<LogOutReturnProps>) => {
 		console.log(event.detail);
 	};
 </script>
@@ -23,6 +24,8 @@
 	}
 
 	.content {
-		margin-top: 20px;
+		position: absolute;
+		right: 120px;
+		top: 20px;
 	}
 </style>
