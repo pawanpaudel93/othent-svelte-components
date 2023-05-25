@@ -52,6 +52,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"buffer": "^6.0.3",
 		"othent": "^1.0.616",
 		"svelte-local-storage-store": "^0.4.0"
 	},
