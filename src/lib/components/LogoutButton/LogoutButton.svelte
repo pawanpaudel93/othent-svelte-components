@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './LogoutButton.css';
 	import { Othent } from 'othent';
+	import { userData } from '$lib/stores';
 	import { createEventDispatcher } from 'svelte';
 	import type { LogOutReturnProps } from 'othent';
 
@@ -14,6 +15,7 @@
 		try {
 			const othent = await Othent({ API_ID: apiid });
 			const logoutResponse = await othent.logOut();
+			logoutResponse.response && userData.set(null);
 			dispatch('logout', logoutResponse as LogOutReturnProps);
 		} catch (e) {
 			console.log('othent.logout() failed:');

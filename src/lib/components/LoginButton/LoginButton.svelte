@@ -2,6 +2,7 @@
 	import './LoginButton.css';
 	import { Othent } from 'othent';
 	import Logo from '../Logo';
+	import { userData } from '$lib/stores';
 	import type { LogInReturnProps } from 'othent';
 	import { createEventDispatcher } from 'svelte';
 
@@ -15,6 +16,7 @@
 		try {
 			const othent = await Othent({ API_ID: apiid });
 			const loginResponse = await othent.logIn();
+			userData.set(loginResponse);
 			dispatch('login', loginResponse as LogInReturnProps);
 		} catch (e) {
 			console.log('othent.login() failed:');

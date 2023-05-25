@@ -18,18 +18,12 @@
 
 	function onLogin(event: CustomEvent<LogInReturnProps>) {
 		const userData = event.detail;
-		setUserData(userData);
 		dispatch('login', userData);
 	}
 
 	function onLogout(event: CustomEvent<LogOutReturnProps>) {
 		const logoutResponse = event.detail;
-		logoutResponse.response && setUserData(null);
 		dispatch('logout', logoutResponse);
-	}
-
-	function setUserData(data: LogInReturnProps | null) {
-		userData.set(data);
 	}
 </script>
 
