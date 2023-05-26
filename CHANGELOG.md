@@ -1,3 +1,20 @@
+
+
+## [0.1.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.0.2...0.1.0) (2023-05-26)
+
+
+### Features
+
+* add slots and props to components ([a77faae](https://github.com/pawanpaudel93/othent-svelte-components/commit/a77faae4745d658560505e65744188350b353c87))
+* make login and logout button background color configurable ([f603bfd](https://github.com/pawanpaudel93/othent-svelte-components/commit/f603bfd9e177b7ddfa9d931286a6795ef87eeeda))
+* make login and logout button color configurable ([a0cbc60](https://github.com/pawanpaudel93/othent-svelte-components/commit/a0cbc60f8b1106515be94258fa21e5af8e28cff0))
+
+
+### Bug Fixes
+
+* add getOthent function ([adee427](https://github.com/pawanpaudel93/othent-svelte-components/commit/adee42731633c121a610f663303e434732e37674))
+* set user data on login and logout component ([c435834](https://github.com/pawanpaudel93/othent-svelte-components/commit/c43583426c3b74ddca33522950ccf7e7f2aaf2ef))
+
 ### [0.0.2](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.0.1...0.0.2) (2023-05-25)
 
 ### Bug Fixes
