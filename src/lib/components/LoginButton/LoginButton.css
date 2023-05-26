@@ -8,7 +8,7 @@ button.othent-button-login,
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #fff;
+	/* background: #fff; */
 	color: black;
 	/* width: fit-content; */
 	/* height: 3em; */

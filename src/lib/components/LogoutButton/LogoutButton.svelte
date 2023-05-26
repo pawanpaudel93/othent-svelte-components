@@ -5,6 +5,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import type { LogOutReturnProps } from 'othent';
 	import {
+		LOGOUT_BUTTON_BACKGROUND_COLOR,
 		LOGOUT_BUTTON_FONT_SIZE,
 		LOGOUT_BUTTON_HEIGHT,
 		LOGOUT_BUTTON_WIDTH
@@ -14,6 +15,7 @@
 	export let buttonHeight: string = LOGOUT_BUTTON_HEIGHT;
 	export let buttonWidth: string = LOGOUT_BUTTON_WIDTH;
 	export let fontSize: string = LOGOUT_BUTTON_FONT_SIZE;
+	export let backgroundColor = LOGOUT_BUTTON_BACKGROUND_COLOR;
 	let clicked = false;
 
 	const dispatch = createEventDispatcher();
@@ -38,7 +40,7 @@
 	class="othent-button-logout"
 	disabled={clicked}
 	on:click={logout}
-	style={`width: ${buttonWidth}; height: ${buttonHeight}; font-size: ${fontSize}`}
+	style={`width: ${buttonWidth}; height: ${buttonHeight}; font-size: ${fontSize}; color: ${backgroundColor}; border: 1px solid ${backgroundColor};`}
 	{...$$restProps}
 >
 	{#if $$slots.default}
