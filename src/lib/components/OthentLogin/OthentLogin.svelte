@@ -22,7 +22,9 @@
 		AVATAR_SIZE,
 		USER_INFO_AVATAR_SIZE,
 		LOGOUT_BUTTON_BACKGROUND_COLOR,
-		LOGIN_BUTTON_BACKGROUND_COLOR
+		LOGIN_BUTTON_BACKGROUND_COLOR,
+		LOGOUT_BUTTON_COLOR,
+		LOGIN_BUTTON_COLOR
 	} from '$lib/constants';
 
 	import type { LogInReturnProps, LogOutReturnProps } from 'othent';
@@ -36,11 +38,13 @@
 	export let loginButtonfontSize: string = LOGIN_BUTTON_FONT_SIZE;
 	export let loginButtonLogoHeight: number = LOGO_HEIGHT;
 	export let loginButtonLogoWidth: number = LOGO_WIDTH;
+	export let loginButtonColor: string = LOGIN_BUTTON_COLOR;
 	export let loginButtonBackgroundColor: string = LOGIN_BUTTON_BACKGROUND_COLOR;
 	export let logoutButtonHeight: string = LOGOUT_BUTTON_HEIGHT;
 	export let logoutButtonWidth: string = LOGOUT_BUTTON_WIDTH;
 	export let logoutButtonfontSize: string = LOGOUT_BUTTON_FONT_SIZE;
 	export let logoutButtonBackgroundColor: string = LOGOUT_BUTTON_BACKGROUND_COLOR;
+	export let logoutButtonColor: string = LOGOUT_BUTTON_COLOR;
 
 	const dispatch = createEventDispatcher();
 
@@ -64,6 +68,7 @@
 			buttonWidth={loginButtonWidth}
 			fontSize={loginButtonfontSize}
 			backgroundColor={loginButtonBackgroundColor}
+			color={loginButtonColor}
 		>
 			<slot name="login-button-logo" slot="logo">
 				<Logo height={loginButtonLogoHeight} width={loginButtonLogoWidth} />
@@ -92,6 +97,7 @@
 						buttonWidth={logoutButtonWidth}
 						fontSize={logoutButtonfontSize}
 						backgroundColor={logoutButtonBackgroundColor}
+						color={logoutButtonColor}
 					>
 						<slot name="logout-button-body">Logout</slot>
 					</LogoutButton>

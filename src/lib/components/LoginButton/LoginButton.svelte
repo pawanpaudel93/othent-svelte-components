@@ -8,6 +8,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import {
 		LOGIN_BUTTON_BACKGROUND_COLOR,
+		LOGIN_BUTTON_COLOR,
 		LOGIN_BUTTON_FONT_SIZE,
 		LOGIN_BUTTON_HEIGHT,
 		LOGIN_BUTTON_WIDTH,
@@ -22,6 +23,7 @@
 	export let logoHeight: number = LOGO_HEIGHT;
 	export let logoWidth: number = LOGO_WIDTH;
 	export let backgroundColor: string = LOGIN_BUTTON_BACKGROUND_COLOR;
+	export let color: string = LOGIN_BUTTON_COLOR;
 	let clicked = false;
 
 	const dispatch = createEventDispatcher();
@@ -46,7 +48,7 @@
 	class="othent-button-login"
 	disabled={clicked}
 	on:click={login}
-	style={`width: ${buttonWidth}; height: ${buttonHeight}; font-size: ${fontSize}; background-color: ${backgroundColor}`}
+	style={`width: ${buttonWidth}; height: ${buttonHeight}; font-size: ${fontSize}; background-color: ${backgroundColor}; color: ${color}`}
 	{...$$restProps}
 >
 	<slot name="logo"><Logo height={logoHeight} width={logoWidth} /></slot>
