@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './LoginButton.css';
-	import { Othent } from 'othent';
 	import Logo from '../Logo';
 	import LoginButtonText from '../Extras/LoginButtonText.svelte';
 	import { userData } from '$lib/stores';
@@ -15,6 +14,7 @@
 		LOGO_HEIGHT,
 		LOGO_WIDTH
 	} from '$lib/constants';
+	import { getOthent } from '$lib/utils';
 
 	export let apiid: string;
 	export let buttonHeight: string = LOGIN_BUTTON_HEIGHT;
@@ -31,7 +31,7 @@
 	async function login() {
 		clicked = true;
 		try {
-			const othent = await Othent({ API_ID: apiid });
+			const othent = await getOthent(apiid);
 			const loginResponse = await othent.logIn();
 			userData.set(loginResponse);
 			dispatch('login', loginResponse as LogInReturnProps);

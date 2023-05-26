@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './LogoutButton.css';
-	import { Othent } from 'othent';
 	import { userData } from '$lib/stores';
 	import { createEventDispatcher } from 'svelte';
 	import type { LogOutReturnProps } from 'othent';
@@ -11,6 +10,7 @@
 		LOGOUT_BUTTON_HEIGHT,
 		LOGOUT_BUTTON_WIDTH
 	} from '$lib/constants';
+	import { getOthent } from '$lib/utils';
 
 	export let apiid: string;
 	export let buttonHeight: string = LOGOUT_BUTTON_HEIGHT;
@@ -27,7 +27,7 @@
 	async function logout() {
 		clicked = true;
 		try {
-			const othent = await Othent({ API_ID: apiid });
+			const othent = await getOthent(apiid);
 			const logoutResponse = await othent.logOut();
 			logoutResponse.response && userData.set(null);
 			dispatch('logout', logoutResponse as LogOutReturnProps);
