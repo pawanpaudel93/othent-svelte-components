@@ -1,5 +1,12 @@
 
 
+## [0.2.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.1.0...0.2.0) (2023-05-26)
+
+
+### Features
+
+* expose getOthent function ([a0b6bcd](https://github.com/pawanpaudel93/othent-svelte-components/commit/a0b6bcdfc1ed7d9b181afd9e87b4ffe9ebe8b522))
+
 ## [0.1.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.0.2...0.1.0) (2023-05-26)
 
 
