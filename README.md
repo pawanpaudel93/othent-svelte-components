@@ -28,11 +28,13 @@ pnpm add othent-svelte-components
 
 ## Components
 
+### OthentLogin
+
 To use the components, Import the component in your script and Use the component:
 
 ```svelte
 <script lang="ts">
- import OthentLogin from 'othent-svelte-components';
+ import { OthentLogin } from 'othent-svelte-components';
 </script>
 
 <OthentLogin apiid="YOUR_API_ID" />
@@ -433,8 +435,16 @@ The Modal component supports the following slots:
 </Modal>
 ```
 
-## Contact
+## Author
 
-If you have any questions or issues with the Othent Library, please contact
-othent team at [hello@othent.io](mailto:hello@othent.io) or open an issue in
-the GitHub repository.
+👤 **Pawan Paudel**
+
+- Github: [@pawanpaudel93](https://github.com/pawanpaudel93)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/pawanpaudel93/othent-svelte-components/issues).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
