@@ -53,10 +53,12 @@ Optional Props:
 - `loginButtonWidth` (default: "fit-content"): The width of the login button.
 - `loginButtonfontSize` (default: "medium"): The font size of the login button text.
 - `loginButtonLogoHeight` (default: 24): The height of the logo displayed on the login button.
+- `loginButtonBackgroundColor` (default: #fff): The background color of the login button
 - `loginButtonLogoWidth` (default: 44): The width of the logo displayed on the login button.
 - `logoutButtonHeight` (default: "100%"): The height of the logout button.
 - `logoutButtonWidth` (default: "100%"): The width of the logout button.
 - `logoutButtonfontSize` (default: "normal"): The font size of the logout button text.
+- `logoutButtonBackgroundColor` (default: #fff): The background color of the logout button
 
 ### Slots
 
@@ -207,6 +209,7 @@ Optional Props:
 - `fontSize` (default: "medium"): The font size of the login button text.
 - `logoHeight` (default: 24): The height of the logo displayed on the login button.
 - `logoWidth` (default: 44): The width of the logo displayed on the login button.
+- `backgroundColor` (default: #fff): The background color of the login button
 
 #### LoginButton Slots
 
@@ -263,6 +266,7 @@ Optional Props:
 - `buttonHeight` (default: "100%"): The height of the logout button.
 - `buttonWidth` (default: "100%"): The width of the logout button.
 - `fontSize` (default: "normal"): The font size of the logout button text.
+- `backgroundColor` (default: #f44336): The background color of the logout button
 
 #### LogoutButton Slots
 
