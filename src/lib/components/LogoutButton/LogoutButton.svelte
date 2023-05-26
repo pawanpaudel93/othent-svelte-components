@@ -4,8 +4,16 @@
 	import { userData } from '$lib/stores';
 	import { createEventDispatcher } from 'svelte';
 	import type { LogOutReturnProps } from 'othent';
+	import {
+		LOGOUT_BUTTON_FONT_SIZE,
+		LOGOUT_BUTTON_HEIGHT,
+		LOGOUT_BUTTON_WIDTH
+	} from '$lib/constants';
 
 	export let apiid: string;
+	export let buttonHeight: string = LOGOUT_BUTTON_HEIGHT;
+	export let buttonWidth: string = LOGOUT_BUTTON_WIDTH;
+	export let fontSize: string = LOGOUT_BUTTON_FONT_SIZE;
 	let clicked = false;
 
 	const dispatch = createEventDispatcher();
@@ -26,7 +34,13 @@
 	}
 </script>
 
-<button class="othent-button-logout" disabled={clicked} on:click={logout} {...$$restProps}>
+<button
+	class="othent-button-logout"
+	disabled={clicked}
+	on:click={logout}
+	style={`width: ${buttonWidth}; height: ${buttonHeight}; font-size: ${fontSize}`}
+	{...$$restProps}
+>
 	{#if $$slots.default}
 		<slot />
 	{:else}

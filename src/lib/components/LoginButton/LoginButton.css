@@ -4,14 +4,14 @@ button.othent-button-login,
 .othent-button-login {
 	appearance: none;
 	/* font-family: "DM Sans", sans-serif; */
-	font-size: medium;
+	/* font-size: medium; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: #fff;
 	color: black;
-	width: fit-content;
-	height: 3em;
+	/* width: fit-content; */
+	/* height: 3em; */
 	padding: 0.25em 0.75em;
 	border: 0;
 	border-radius: 0.375em;

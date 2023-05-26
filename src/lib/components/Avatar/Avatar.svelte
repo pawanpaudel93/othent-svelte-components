@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { AVATAR_SIZE } from '$lib/constants';
 	import './Avatar.css';
 
-	export let username = '';
-	export let src = '';
+	export let username: string = '';
+	export let src: string = '';
+	export let size: string = AVATAR_SIZE;
 	let error = false;
 
 	function handleError() {
@@ -15,11 +17,12 @@
 		{src}
 		alt={`${username}'s avatar`}
 		class="othent-avatar"
+		style={`width: ${size}; height: ${size};`}
 		on:error={handleError}
 		referrerpolicy="no-referrer"
 	/>
 {:else}
-	<div class="othent-avatar">
+	<div class="othent-avatar" style={`width: ${size}; height: ${size};`}>
 		{#if username}
 			{username.charAt(0).toUpperCase()}
 		{:else}

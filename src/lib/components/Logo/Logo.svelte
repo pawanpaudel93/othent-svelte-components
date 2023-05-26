@@ -1,7 +1,8 @@
 <script lang="ts">
 	import './Logo.css';
-	export let width = 44;
-	export let height = 24;
+	import { LOGO_HEIGHT, LOGO_WIDTH } from '$lib/constants';
+	export let width = LOGO_WIDTH;
+	export let height = LOGO_HEIGHT;
 </script>
 
 <svg

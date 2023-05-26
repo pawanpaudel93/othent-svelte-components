@@ -2,6 +2,7 @@
 	import './Modal.css';
 	import { onMount } from 'svelte';
 	import { ModalLocation } from '$lib/types';
+	import { AVATAR_SIZE } from '$lib/constants';
 
 	const LOCATIONS = [
 		'top',
@@ -15,6 +16,7 @@
 	];
 
 	export let location: ModalLocation = ModalLocation.bottom;
+	export let avatarSize: string = AVATAR_SIZE;
 
 	let showModal = false;
 	let modalRef: HTMLDivElement | null = null;
@@ -39,10 +41,11 @@
 <div
 	class="othent-login-button othent-modal"
 	on:click={() => setShowModal(!showModal)}
+	style={`width: ${avatarSize}; height: ${avatarSize};`}
 	bind:this={modalRef}
 	{...$$restProps}
 >
-	<slot name="parent">Show Modal</slot>
+	<slot name="avatar">Show Modal</slot>
 	{#if showModal}
 		<div class="othent-modal-children othent-modal-children-{LOCATIONS[location]}">
 			<slot>Modal Content</slot>
