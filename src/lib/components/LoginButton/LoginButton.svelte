@@ -2,8 +2,6 @@
 	import './LoginButton.css';
 	import Logo from '../Logo';
 	import LoginButtonText from '../Extras/LoginButtonText.svelte';
-	import { userData } from '$lib/stores';
-	import type { LogInReturnProps } from 'othent';
 	import { createEventDispatcher } from 'svelte';
 	import {
 		LOGIN_BUTTON_BACKGROUND_COLOR,
@@ -14,7 +12,7 @@
 		LOGO_HEIGHT,
 		LOGO_WIDTH
 	} from '$lib/constants';
-	import { getOthent } from '$lib/utils';
+	import { othentLogin } from '$lib/utils';
 
 	export let apiid: string;
 	export let buttonHeight: string = LOGIN_BUTTON_HEIGHT;
@@ -31,10 +29,8 @@
 	async function login() {
 		clicked = true;
 		try {
-			const othent = await getOthent(apiid);
-			const loginResponse = await othent.logIn();
-			userData.set(loginResponse);
-			dispatch('login', loginResponse as LogInReturnProps);
+			const loginResponse = await othentLogin(apiid);
+			dispatch('login', loginResponse);
 		} catch (e) {
 			console.log('othent.login() failed:');
 			console.log(e);
