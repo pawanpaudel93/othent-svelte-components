@@ -1,5 +1,12 @@
 
 
+## [0.3.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.2.0...0.3.0) (2023-05-27)
+
+
+### Features
+
+* expose othentLogin and othentLogout functions ([3c4f01f](https://github.com/pawanpaudel93/othent-svelte-components/commit/3c4f01fbba1ec38712a607f7d542b5bd36c6605a))
+
 ## [0.2.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.1.0...0.2.0) (2023-05-26)
 
 
