@@ -76,8 +76,8 @@ The OthentLogin component provides the following slots for customization:
 
 The Othent Login Component emits the following events:
 
-- `login`: Dispatched when the user successfully logs in. The event detail contains the login response data.
-- `logout`: Dispatched when the user logs out. The event detail contains the logout response data.
+- `loggedIn`: Dispatched when the user successfully logs in. The event detail contains the login response data.
+- `loggedOut`: Dispatched when the user logs out. The event detail contains the logout response data.
 
 To handle these events, you can attach event listeners to the component:
 
@@ -227,7 +227,7 @@ The `LoginButton` component provides the following slots for customization:
 
 The LoginButton component emits the following event:
 
-- `login`: This event is triggered when the user successfully logs in. The event payload includes the user data.
+- `loggedIn`: This event is triggered when the user successfully logs in. The event payload includes the user data.
 
 #### LoginButton Example Usage
 
@@ -284,7 +284,7 @@ The LogoutButton component provides the following slot for customization:
 
 The LogoutButton component emits the following event:
 
-- `logout`: This event is triggered when the user successfully logs out. The event payload includes the logout response.
+- `loggedOut`: This event is triggered when the user successfully logs out. The event payload includes the logout response.
 
 #### LogoutButton Example Usage
 
