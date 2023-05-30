@@ -1,5 +1,12 @@
 
 
+### [0.3.1](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.3.0...0.3.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* update props & event names ([703dd9c](https://github.com/pawanpaudel93/othent-svelte-components/commit/703dd9c2cf40b9e1e23dbe5a268330713a0447f7))
+
 ## [0.3.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.2.0...0.3.0) (2023-05-27)
 
 
