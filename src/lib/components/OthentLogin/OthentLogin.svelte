@@ -35,14 +35,14 @@
 	export let userInfoAvatarSize: string = USER_INFO_AVATAR_SIZE;
 	export let loginButtonHeight: string = LOGIN_BUTTON_HEIGHT;
 	export let loginButtonWidth: string = LOGIN_BUTTON_WIDTH;
-	export let loginButtonfontSize: string = LOGIN_BUTTON_FONT_SIZE;
+	export let loginButtonFontSize: string = LOGIN_BUTTON_FONT_SIZE;
 	export let loginButtonLogoHeight: number = LOGO_HEIGHT;
 	export let loginButtonLogoWidth: number = LOGO_WIDTH;
 	export let loginButtonColor: string = LOGIN_BUTTON_COLOR;
 	export let loginButtonBackgroundColor: string = LOGIN_BUTTON_BACKGROUND_COLOR;
 	export let logoutButtonHeight: string = LOGOUT_BUTTON_HEIGHT;
 	export let logoutButtonWidth: string = LOGOUT_BUTTON_WIDTH;
-	export let logoutButtonfontSize: string = LOGOUT_BUTTON_FONT_SIZE;
+	export let logoutButtonFontSize: string = LOGOUT_BUTTON_FONT_SIZE;
 	export let logoutButtonBackgroundColor: string = LOGOUT_BUTTON_BACKGROUND_COLOR;
 	export let logoutButtonColor: string = LOGOUT_BUTTON_COLOR;
 
@@ -50,23 +50,23 @@
 
 	function onLogin(event: CustomEvent<LogInReturnProps>) {
 		const userData = event.detail;
-		dispatch('login', userData);
+		dispatch('loggedIn', userData);
 	}
 
 	function onLogout(event: CustomEvent<LogOutReturnProps>) {
 		const logoutResponse = event.detail;
-		dispatch('logout', logoutResponse);
+		dispatch('loggedOut', logoutResponse);
 	}
 </script>
 
 <div class="othent-login">
 	{#if $userData === null}
 		<LoginButton
-			on:login={onLogin}
+			on:loggedIn={onLogin}
 			{apiid}
 			buttonHeight={loginButtonHeight}
 			buttonWidth={loginButtonWidth}
-			fontSize={loginButtonfontSize}
+			fontSize={loginButtonFontSize}
 			backgroundColor={loginButtonBackgroundColor}
 			color={loginButtonColor}
 		>
@@ -91,11 +91,11 @@
 				<UserInfo userdata={$userData} avatarSize={userInfoAvatarSize} />
 				<div class="text-center">
 					<LogoutButton
-						on:logout={onLogout}
+						on:loggedOut={onLogout}
 						{apiid}
 						buttonHeight={logoutButtonHeight}
 						buttonWidth={logoutButtonWidth}
-						fontSize={logoutButtonfontSize}
+						fontSize={logoutButtonFontSize}
 						backgroundColor={logoutButtonBackgroundColor}
 						color={logoutButtonColor}
 					>

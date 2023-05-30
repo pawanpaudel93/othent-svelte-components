@@ -30,7 +30,7 @@
 		clicked = true;
 		try {
 			const loginResponse = await othentLogin(apiid);
-			dispatch('login', loginResponse);
+			dispatch('loggedIn', loginResponse);
 		} catch (e) {
 			console.log('othent.login() failed:');
 			console.log(e);

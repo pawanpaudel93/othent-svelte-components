@@ -53,14 +53,14 @@ Optional Props:
 - `userInfoAvatarSize` (default: "3em"): The size of the avatar displayed in the user info section.
 - `loginButtonHeight` (default: "3em"): The height of the login button.
 - `loginButtonWidth` (default: "fit-content"): The width of the login button.
-- `loginButtonfontSize` (default: "medium"): The font size of the login button text.
+- `loginButtonFontSize` (default: "medium"): The font size of the login button text.
 - `loginButtonLogoHeight` (default: 24): The height of the logo displayed on the login button.
 - `loginButtonColor` (default: black): The text color of the login button.
 - `loginButtonBackgroundColor` (default: #fff): The background color of the login button.
 - `loginButtonLogoWidth` (default: 44): The width of the logo displayed on the login button.
 - `logoutButtonHeight` (default: "100%"): The height of the logout button.
 - `logoutButtonWidth` (default: "100%"): The width of the logout button.
-- `logoutButtonfontSize` (default: "normal"): The font size of the logout button text.
+- `logoutButtonFontSize` (default: "normal"): The font size of the logout button text.
 - `logoutButtonColor` (default: "#f44336"): The text color of the logout button.
 - `logoutButtonBackgroundColor` (default: #fff): The background color of the logout button.
 
@@ -82,7 +82,7 @@ The Othent Login Component emits the following events:
 To handle these events, you can attach event listeners to the component:
 
 ```svelte
-<OthentLogin apiid="YOUR_API_ID" on:login={handleLogin} on:logout={handleLogout} />
+<OthentLogin apiid="YOUR_API_ID" on:loggedIn={handleLogin} on:loggedOut={handleLogout} />
 ```
 
 ```svelte
@@ -122,10 +122,10 @@ To handle these events, you can attach event listeners to the component:
 <div class="content">
  <OthentLogin
   apiid={API_ID}
-  on:login={onLogin}
-  on:logout={onLogout}
+  on:loggedIn={onLogin}
+  on:loggedOut={onLogout}
   loginButtonHeight="25px"
-  loginButtonfontSize="14px"
+  loginButtonFontSize="14px"
   loginButtonLogoHeight={16}
   loginButtonLogoWidth={36}
   avatarSize="2.5em"
@@ -241,7 +241,7 @@ The LoginButton component emits the following event:
  }
 </script>
 
-<LoginButton apiid="YOUR_API_ID" on:login={handleLogin}>
+<LoginButton apiid="YOUR_API_ID" on:loggedIn={handleLogin}>
  <span>Login with Othent</span>
 </LoginButton>
 ```
@@ -300,7 +300,7 @@ The LogoutButton component emits the following event:
 
 <LogoutButton
  apiid="YOUR_API_ID"
- on:logout={handleLogout}
+ on:loggedOut={handleLogout}
  buttonHeight="48px"
  buttonWidth="180px"
  fontSize="18px"

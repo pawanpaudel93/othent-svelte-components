@@ -27,7 +27,7 @@
 		clicked = true;
 		try {
 			const logoutResponse = await othentLogout(apiid);
-			dispatch('logout', logoutResponse as LogOutReturnProps);
+			logoutResponse.response && dispatch('loggedOut', logoutResponse);
 		} catch (e) {
 			console.log('othent.logout() failed:');
 			console.log(e);

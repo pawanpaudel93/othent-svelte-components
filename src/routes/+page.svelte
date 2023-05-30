@@ -18,10 +18,10 @@
 <div class="content">
 	<OthentLogin
 		apiid={API_ID}
-		on:login={onLogin}
-		on:logout={onLogout}
+		on:loggedIn={onLogin}
+		on:loggedOut={onLogout}
 		loginButtonHeight="25px"
-		loginButtonfontSize="14px"
+		loginButtonFontSize="14px"
 		loginButtonLogoHeight={16}
 		loginButtonLogoWidth={36}
 		avatarSize="2.5em"
