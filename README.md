@@ -435,6 +435,80 @@ The Modal component supports the following slots:
 </Modal>
 ```
 
+## Helper Functions
+
+### getOthent
+
+This function retrieves or initializes the Othent instance using the provided API ID.
+
+Parameters:
+
+- `apiid` (string): The API ID used to initialize Othent.
+
+Returns
+
+- `Promise<useOthentReturnProps>`: A promise that resolves to the Othent instance.
+
+Example
+
+```ts
+import { getOthent } from 'othent-vue-components';
+const othent = await getOthent('your-api-id');
+```
+
+### getUserData
+
+This function returns the user data.
+
+Returns
+
+- `LogInReturnProps | null`: User data if user logged in else null.
+
+Example
+
+```ts
+import { getUserData } from 'othent-vue-components';
+const logoutResponse = getUserData();
+```
+
+### othentLogin
+
+This function performs the login process using the provided API ID.
+
+Parameters:
+
+- `apiid` (string): The API ID used to initialize Othent.
+
+Returns
+
+- `Promise<LogInReturnProps>`: A promise that resolves to the login response.
+
+Example
+
+```ts
+import { othentLogin } from 'othent-vue-components';
+const loginResponse = await othentLogin('your-api-id');
+```
+
+### othentLogout
+
+This function performs the logout process using the provided API ID.
+
+Parameters:
+
+- `apiid` (string): The API ID used to initialize Othent.
+
+Returns
+
+- `Promise<LogOutReturnProps>`: A promise that resolves to the logout response.
+
+Example
+
+```ts
+import { othentLogout } from 'othent-vue-components';
+const logoutResponse = await othentLogout('your-api-id');
+```
+
 ## Author
 
 👤 **Pawan Paudel**

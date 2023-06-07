@@ -4,9 +4,14 @@ import {
 	type useOthentReturnProps,
 	type LogOutReturnProps
 } from 'othent';
+import { get } from 'svelte/store';
 import { userData } from './stores';
 
 let othent: useOthentReturnProps | undefined;
+
+export function getUserData() {
+	return get(userData) ? { ...get(userData) } : null;
+}
 
 export async function getOthent(apiid: string) {
 	if (othent) return othent;

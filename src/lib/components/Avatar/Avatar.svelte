@@ -20,6 +20,7 @@
 		style={`width: ${size}; height: ${size};`}
 		on:error={handleError}
 		referrerpolicy="no-referrer"
+		{...$$restProps}
 	/>
 {:else}
 	<div class="othent-avatar" style={`width: ${size}; height: ${size};`}>
