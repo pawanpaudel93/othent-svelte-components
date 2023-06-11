@@ -3,11 +3,11 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [
-		sveltekit(),
-		nodePolyfills({
-			// Whether to polyfill `node:` protocol imports.
-			protocolImports: true
-		})
-	]
+  plugins: [
+    sveltekit(),
+    nodePolyfills({
+      // Whether to polyfill `node:` protocol imports.
+      protocolImports: true
+    })
+  ]
 });

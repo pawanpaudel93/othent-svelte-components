@@ -1,11 +1,8 @@
-
-
 ### [0.5.1](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.5.0...0.5.1) (2023-06-11)
-
 
 ### Bug Fixes
 
-* Dark mode change bug fix ([b1b09f5](https://github.com/pawanpaudel93/othent-svelte-components/commit/b1b09f56f02fb6c84b6682443371de8beea876c6))
+- Dark mode change bug fix ([b1b09f5](https://github.com/pawanpaudel93/othent-svelte-components/commit/b1b09f56f02fb6c84b6682443371de8beea876c6))
 
 ## [0.5.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.4.0...0.5.0) (2023-06-11)
 
