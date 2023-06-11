@@ -12,7 +12,5 @@ export const LOGOUT_BUTTON_WIDTH = '100%';
 export const LOGOUT_BUTTON_FONT_SIZE = 'normal';
 export const LOGOUT_BUTTON_BACKGROUND_COLOR = '#ffffff';
 export const LOGOUT_BUTTON_COLOR = '#f44336';
-export const USER_INFO_COLOR = 'black';
-export const USER_INFO_BACKGROUND_COLOR = '#ffffff';
 export const DARK_COLOR = '#cccccc';
 export const DARK_BACKGROUND_COLOR = '#333333';

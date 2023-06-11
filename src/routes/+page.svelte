@@ -26,6 +26,7 @@
 		loginButtonLogoWidth={36}
 		avatarSize="2.5em"
 		logoutButtonColor="#00a3c4"
+		darkMode={false}
 	>
 		<svg
 			slot="login-button-logo"

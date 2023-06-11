@@ -9,6 +9,7 @@
 		LOGOUT_BUTTON_WIDTH
 	} from '$lib/constants';
 	import { othentLogout } from '$lib/utils';
+	import { isLoading } from '$lib/stores';
 
 	export let apiid: string;
 	export let buttonHeight: string = LOGOUT_BUTTON_HEIGHT;
@@ -19,14 +20,14 @@
 	let clazz: string = '';
 	export let style: string = '';
 	export { clazz as class };
+	let buttonStyle: string;
 	let hoverColor = `${color}11`;
 	let isHovered = false;
-	let clicked = false;
 
 	const dispatch = createEventDispatcher();
 
 	async function logout() {
-		clicked = true;
+		$isLoading = true;
 		try {
 			const logoutResponse = await othentLogout(apiid);
 			if (logoutResponse.response) {
@@ -35,25 +36,27 @@
 		} catch (error) {
 			console.error('othent.logout() failed:', error);
 		} finally {
-			clicked = false;
+			$isLoading = false;
 		}
 	}
 
-	const buttonStyle = `
-		width: ${buttonWidth};
-		height: ${buttonHeight};
-		font-size: ${fontSize};
-		color: ${color};
-		border: 1px solid ${color};
-		background-color: ${isHovered ? hoverColor : backgroundColor};
-		${style}
-	`;
+	$: {
+		buttonStyle = `
+			width: ${buttonWidth};
+			height: ${buttonHeight};
+			font-size: ${fontSize};
+			color: ${color};
+			border: 1px solid ${color};
+			background-color: ${isHovered ? hoverColor : backgroundColor};
+			${style}
+		`;
+	}
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <button
 	class="othent-button-logout {clazz}"
-	disabled={clicked}
+	disabled={$isLoading}
 	on:click={logout}
 	style={buttonStyle}
 	on:mouseover={() => (isHovered = true)}

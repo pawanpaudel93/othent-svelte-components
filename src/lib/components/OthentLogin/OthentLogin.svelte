@@ -53,6 +53,10 @@
 
 	const dispatch = createEventDispatcher();
 
+	const modalStyle = darkMode
+		? `color: ${darkModeColor}; background: ${darkModeBackgroundColor}`
+		: '';
+
 	function onLogin(event: CustomEvent<LogInReturnProps>) {
 		const userData = event.detail;
 		dispatch('loggedIn', userData);
@@ -72,8 +76,8 @@
 			buttonHeight={loginButtonHeight}
 			buttonWidth={loginButtonWidth}
 			fontSize={loginButtonFontSize}
-			backgroundColor={loginButtonBackgroundColor}
-			color={loginButtonColor}
+			backgroundColor={darkMode ? darkModeBackgroundColor : loginButtonBackgroundColor}
+			color={darkMode ? darkModeColor : loginButtonColor}
 		>
 			<slot name="login-button-logo" slot="logo">
 				<Logo height={loginButtonLogoHeight} width={loginButtonLogoWidth} />
@@ -83,7 +87,7 @@
 			</slot>
 		</LoginButton>
 	{:else}
-		<Modal {location} {avatarSize}>
+		<Modal {location} {avatarSize} style={modalStyle}>
 			<div slot="avatar">
 				{#if $$slots.default}
 					<slot />
@@ -100,8 +104,8 @@
 						{apiid}
 						buttonHeight={logoutButtonHeight}
 						buttonWidth={logoutButtonWidth}
-						fontSize={logoutButtonFontSize}
-						backgroundColor={logoutButtonBackgroundColor}
+						fontSize={darkMode ? darkModeColor : logoutButtonFontSize}
+						backgroundColor={darkMode ? darkModeBackgroundColor : logoutButtonBackgroundColor}
 						color={logoutButtonColor}
 					>
 						<slot name="logout-button-body">Logout</slot>

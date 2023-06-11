@@ -12,7 +12,9 @@
 		LOGO_HEIGHT,
 		LOGO_WIDTH
 	} from '$lib/constants';
+	import { isLoading } from '$lib/stores';
 	import { othentLogin } from '$lib/utils';
+	import Spinner from '../Extras/Spinner.svelte';
 
 	export let apiid: string;
 	export let buttonHeight: string = LOGIN_BUTTON_HEIGHT;
@@ -25,19 +27,18 @@
 	let clazz: string = '';
 	export let style: string = '';
 	export { clazz as class };
-	let clicked = false;
 
 	const dispatch = createEventDispatcher();
 
 	async function login() {
-		clicked = true;
+		$isLoading = true;
 		try {
 			const loginResponse = await othentLogin(apiid);
 			dispatch('loggedIn', loginResponse);
 		} catch (error) {
 			console.error('othent.login() failed:', error);
 		} finally {
-			clicked = false;
+			$isLoading = false;
 		}
 	}
 
@@ -53,12 +54,17 @@
 
 <button
 	class="othent-button-login {clazz}"
-	disabled={clicked}
+	disabled={$isLoading}
 	on:click={login}
 	style={buttonStyle}
 	{...$$restProps}
 >
-	<slot name="logo"><Logo height={logoHeight} width={logoWidth} /></slot>
+	{#if $isLoading}
+		<Spinner size={`calc(${buttonHeight} - 10px)`} style="margin-right: 0.5em;" />
+	{:else}
+		<slot name="logo"><Logo height={logoHeight} width={logoWidth} /></slot>
+	{/if}
+
 	{#if $$slots.default}
 		<slot />
 	{:else}

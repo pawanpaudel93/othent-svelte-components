@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { ModalLocation } from '$lib/types';
 	import { AVATAR_SIZE } from '$lib/constants';
+	import { isLoading } from '$lib/stores';
 
 	const LOCATIONS = [
 		'top',
@@ -54,7 +55,16 @@
 	bind:this={modalRef}
 	{...$$restProps}
 >
-	<slot name="avatar">Show Modal</slot>
+	<div class="avatar-wrapper">
+		{#if $isLoading}
+			<div class="overlay">
+				<div class="avatar-loading-border">
+					<div class="loading-border" />
+				</div>
+			</div>
+		{/if}
+		<slot name="avatar">Show Modal</slot>
+	</div>
 	{#if showModal}
 		<div class="othent-modal-children othent-modal-children-{LOCATIONS[location]}">
 			<slot>Modal Content</slot>
