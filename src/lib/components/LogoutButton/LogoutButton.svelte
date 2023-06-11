@@ -1,7 +1,6 @@
 <script lang="ts">
 	import './LogoutButton.css';
 	import { createEventDispatcher } from 'svelte';
-	import type { LogOutReturnProps } from 'othent';
 	import {
 		LOGOUT_BUTTON_BACKGROUND_COLOR,
 		LOGOUT_BUTTON_COLOR,
@@ -16,7 +15,10 @@
 	export let buttonWidth: string = LOGOUT_BUTTON_WIDTH;
 	export let fontSize: string = LOGOUT_BUTTON_FONT_SIZE;
 	export let color: string = LOGOUT_BUTTON_COLOR;
-	export let backgroundColor = LOGOUT_BUTTON_BACKGROUND_COLOR;
+	export let backgroundColor: string = LOGOUT_BUTTON_BACKGROUND_COLOR;
+	let clazz: string = '';
+	export let style: string = '';
+	export { clazz as class };
 	let hoverColor = `${color}11`;
 	let isHovered = false;
 	let clicked = false;
@@ -27,24 +29,33 @@
 		clicked = true;
 		try {
 			const logoutResponse = await othentLogout(apiid);
-			logoutResponse.response && dispatch('loggedOut', logoutResponse);
-		} catch (e) {
-			console.log('othent.logout() failed:');
-			console.log(e);
+			if (logoutResponse.response) {
+				dispatch('loggedOut', logoutResponse);
+			}
+		} catch (error) {
+			console.error('othent.logout() failed:', error);
 		} finally {
 			clicked = false;
 		}
 	}
+
+	const buttonStyle = `
+		width: ${buttonWidth};
+		height: ${buttonHeight};
+		font-size: ${fontSize};
+		color: ${color};
+		border: 1px solid ${color};
+		background-color: ${isHovered ? hoverColor : backgroundColor};
+		${style}
+	`;
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <button
-	class="othent-button-logout"
+	class="othent-button-logout {clazz}"
 	disabled={clicked}
 	on:click={logout}
-	style={`width: ${buttonWidth}; height: ${buttonHeight}; font-size: ${fontSize}; color: ${color}; border: 1px solid ${color}; background-color: ${
-		isHovered ? hoverColor : backgroundColor
-	};`}
+	style={buttonStyle}
 	on:mouseover={() => (isHovered = true)}
 	on:mouseout={() => (isHovered = false)}
 	{...$$restProps}

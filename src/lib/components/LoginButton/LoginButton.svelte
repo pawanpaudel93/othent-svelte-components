@@ -22,6 +22,9 @@
 	export let logoWidth: number = LOGO_WIDTH;
 	export let backgroundColor: string = LOGIN_BUTTON_BACKGROUND_COLOR;
 	export let color: string = LOGIN_BUTTON_COLOR;
+	let clazz: string = '';
+	export let style: string = '';
+	export { clazz as class };
 	let clicked = false;
 
 	const dispatch = createEventDispatcher();
@@ -31,20 +34,28 @@
 		try {
 			const loginResponse = await othentLogin(apiid);
 			dispatch('loggedIn', loginResponse);
-		} catch (e) {
-			console.log('othent.login() failed:');
-			console.log(e);
+		} catch (error) {
+			console.error('othent.login() failed:', error);
 		} finally {
 			clicked = false;
 		}
 	}
+
+	const buttonStyle = `
+		width: ${buttonWidth};
+		height: ${buttonHeight};
+		font-size: ${fontSize};
+		background-color: ${backgroundColor};
+		color: ${color};
+		${style}
+	`;
 </script>
 
 <button
-	class="othent-button-login"
+	class="othent-button-login {clazz}"
 	disabled={clicked}
 	on:click={login}
-	style={`width: ${buttonWidth}; height: ${buttonHeight}; font-size: ${fontSize}; background-color: ${backgroundColor}; color: ${color}`}
+	style={buttonStyle}
 	{...$$restProps}
 >
 	<slot name="logo"><Logo height={logoHeight} width={logoWidth} /></slot>

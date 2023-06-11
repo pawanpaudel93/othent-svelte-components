@@ -20,6 +20,15 @@
 
 	let showModal = false;
 	let modalRef: HTMLDivElement | null = null;
+	let clazz: string = '';
+	export let style: string = '';
+	export { clazz as class };
+
+	let modalStyle = `
+		width: ${avatarSize};
+		height: ${avatarSize};
+		${style}
+	`;
 
 	onMount(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -39,9 +48,9 @@
 </script>
 
 <div
-	class="othent-login-button othent-modal"
+	class="othent-login-button othent-modal {clazz}"
 	on:click={() => setShowModal(!showModal)}
-	style={`width: ${avatarSize}; height: ${avatarSize};`}
+	style={modalStyle}
 	bind:this={modalRef}
 	{...$$restProps}
 >

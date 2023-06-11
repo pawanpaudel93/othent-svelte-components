@@ -24,7 +24,9 @@
 		LOGOUT_BUTTON_BACKGROUND_COLOR,
 		LOGIN_BUTTON_BACKGROUND_COLOR,
 		LOGOUT_BUTTON_COLOR,
-		LOGIN_BUTTON_COLOR
+		LOGIN_BUTTON_COLOR,
+		DARK_BACKGROUND_COLOR,
+		DARK_COLOR
 	} from '$lib/constants';
 
 	import type { LogInReturnProps, LogOutReturnProps } from 'othent';
@@ -45,6 +47,9 @@
 	export let logoutButtonFontSize: string = LOGOUT_BUTTON_FONT_SIZE;
 	export let logoutButtonBackgroundColor: string = LOGOUT_BUTTON_BACKGROUND_COLOR;
 	export let logoutButtonColor: string = LOGOUT_BUTTON_COLOR;
+	export let darkModeColor: string = DARK_COLOR;
+	export let darkModeBackgroundColor: string = DARK_BACKGROUND_COLOR;
+	export let darkMode = false;
 
 	const dispatch = createEventDispatcher();
 
