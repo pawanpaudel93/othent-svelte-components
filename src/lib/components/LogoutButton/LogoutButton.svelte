@@ -20,7 +20,6 @@
 	let clazz: string = '';
 	export let style: string = '';
 	export { clazz as class };
-	let buttonStyle: string;
 	let hoverColor = `${color}11`;
 	let isHovered = false;
 
@@ -39,18 +38,6 @@
 			$isLoading = false;
 		}
 	}
-
-	$: {
-		buttonStyle = `
-			width: ${buttonWidth};
-			height: ${buttonHeight};
-			font-size: ${fontSize};
-			color: ${color};
-			border: 1px solid ${color};
-			background-color: ${isHovered ? hoverColor : backgroundColor};
-			${style}
-		`;
-	}
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
@@ -58,7 +45,15 @@
 	class="othent-button-logout {clazz}"
 	disabled={$isLoading}
 	on:click={logout}
-	style={buttonStyle}
+	style={`
+			width: ${buttonWidth};
+			height: ${buttonHeight};
+			font-size: ${fontSize};
+			color: ${color};
+			border: 1px solid ${color};
+			background-color: ${isHovered ? hoverColor : backgroundColor};
+			${style}
+		`}
 	on:mouseover={() => (isHovered = true)}
 	on:mouseout={() => (isHovered = false)}
 	{...$$restProps}

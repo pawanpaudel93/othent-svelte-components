@@ -41,22 +41,20 @@
 			$isLoading = false;
 		}
 	}
-
-	const buttonStyle = `
-		width: ${buttonWidth};
-		height: ${buttonHeight};
-		font-size: ${fontSize};
-		background-color: ${backgroundColor};
-		color: ${color};
-		${style}
-	`;
 </script>
 
 <button
 	class="othent-button-login {clazz}"
 	disabled={$isLoading}
 	on:click={login}
-	style={buttonStyle}
+	style={`
+			width: ${buttonWidth};
+			height: ${buttonHeight};
+			font-size: ${fontSize};
+			background-color: ${backgroundColor};
+			color: ${color};
+			${style}
+		`}
 	{...$$restProps}
 >
 	{#if $isLoading}

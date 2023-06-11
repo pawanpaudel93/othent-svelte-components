@@ -25,12 +25,6 @@
 	export let style: string = '';
 	export { clazz as class };
 
-	let modalStyle = `
-		width: ${avatarSize};
-		height: ${avatarSize};
-		${style}
-	`;
-
 	onMount(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (modalRef && !modalRef.contains(event.target as Node)) {
@@ -51,7 +45,11 @@
 <div
 	class="othent-login-button othent-modal {clazz}"
 	on:click={() => setShowModal(!showModal)}
-	style={modalStyle}
+	style={`
+			width: ${avatarSize};
+			height: ${avatarSize};
+			${style}
+		`}
 	bind:this={modalRef}
 	{...$$restProps}
 >

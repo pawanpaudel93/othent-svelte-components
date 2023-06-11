@@ -1,12 +1,9 @@
-
-
 ## [0.5.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.4.0...0.5.0) (2023-06-11)
-
 
 ### Features
 
-* Add class and style props to components ([e462529](https://github.com/pawanpaudel93/othent-svelte-components/commit/e462529bc6d9475fdd881821eaf78aa12352081d))
-* Add dark mode ([cb5beac](https://github.com/pawanpaudel93/othent-svelte-components/commit/cb5beac17d0cfe4819118e4dfb908b3ce748e9c2))
+- Add class and style props to components ([e462529](https://github.com/pawanpaudel93/othent-svelte-components/commit/e462529bc6d9475fdd881821eaf78aa12352081d))
+- Add dark mode ([cb5beac](https://github.com/pawanpaudel93/othent-svelte-components/commit/cb5beac17d0cfe4819118e4dfb908b3ce748e9c2))
 
 ## [0.4.0](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.3.2...0.4.0) (2023-06-07)
 

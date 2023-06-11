@@ -5,10 +5,10 @@
 	export { clazz as class };
 
 	let spinnerStyle = `
-    width: ${size};
-    height: ${size};
-    ${style}
-  `;
+		width: ${size};
+		height: ${size};
+		${style}
+	`;
 </script>
 
 <div class="loading-container">
@@ -24,8 +24,8 @@
 	}
 
 	.loading-spinner {
-		border: 4px solid #f3f3f3; /* Light gray */
-		border-top: 4px solid #3498db; /* Blue */
+		border: 3px solid #f3f3f3; /* Light gray */
+		border-top: 3px solid #3498db; /* Blue */
 		border-radius: 50%;
 		width: 40px;
 		height: 40px;
