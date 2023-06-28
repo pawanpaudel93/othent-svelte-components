@@ -1,3 +1,7 @@
+
+
+### [0.5.2](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.5.1...0.5.2) (2023-06-28)
+
 ### [0.5.1](https://github.com/pawanpaudel93/othent-svelte-components/compare/0.5.0...0.5.1) (2023-06-11)
 
 ### Bug Fixes
