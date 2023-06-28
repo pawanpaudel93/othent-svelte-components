@@ -53,7 +53,7 @@
   "type": "module",
   "dependencies": {
     "buffer": "^6.0.3",
-    "othent": "^1.0.619",
+    "othent": "^1.0.634",
     "svelte-local-storage-store": "^0.4.0"
   },
   "release-it": {
